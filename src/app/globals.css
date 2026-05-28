@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-primary: #F8FAFC;
+  --color-background-secondary: #FFFFFF;
+  --color-background-soft: #F1F5F9;
+  
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  
+  --color-brand-royal: #4F46E5;
+  --color-brand-purple: #7C3AED;
+  --color-brand-sky: #0EA5E9;
+  --color-brand-cyan: #06B6D4;
+
+  --color-border-light: rgba(15,23,42,0.08);
+
+  --font-heading: 'Satoshi', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #F8FAFC;
+    --foreground: #0F172A;
+  }
+  
+  * {
+    @apply border-border-light;
+  }
+  
+  body {
+    @apply bg-background-primary text-text-primary font-body antialiased selection:bg-brand-royal/20 selection:text-brand-royal overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Custom Gradient Utilities */
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-brand-royal to-brand-purple;
+  }
+  
+  .text-gradient-secondary {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-brand-sky to-brand-cyan;
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-brand-royal to-brand-purple;
+  }
+  
+  .bg-gradient-soft {
+    @apply bg-gradient-to-b from-background-secondary to-background-primary;
+  }
+
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-xl border border-border-light shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  }
+}
+
+/* Custom Mesh Gradient Animations */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
