@@ -13,8 +13,8 @@ const MENTORS = [
 
 export default function MentorshipSection() {
   return (
-    <section id="mentorship" className="w-full py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="mentorship" className="w-full py-16 md:py-32 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2">
@@ -22,7 +22,7 @@ export default function MentorshipSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 leading-tight"
+              className="text-3xl md:text-5xl font-heading font-bold text-text-primary mb-4 md:mb-6 leading-tight"
             >
               Learn From Founders & <span className="text-gradient-primary">Industry Mentors.</span>
             </motion.h2>
@@ -31,7 +31,7 @@ export default function MentorshipSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-text-secondary leading-relaxed mb-10"
+              className="text-base md:text-lg text-text-secondary leading-relaxed mb-8 md:mb-10"
             >
               Skip the traditional lectures. Our students receive direct guidance, feedback, and networking opportunities from people who are actually building the future.
             </motion.p>
@@ -53,11 +53,11 @@ export default function MentorshipSection() {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 relative min-h-[500px]">
+          <div className="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] mt-8 lg:mt-0">
             {/* Realistic Bento Gallery for Mentors */}
             <div className="grid grid-cols-2 gap-4 h-full relative z-10">
-               <BentoCard className="col-span-2 row-span-1 p-6 flex items-center justify-between !bg-white/40">
-                 <div className="flex items-center gap-4">
+               <BentoCard className="col-span-2 row-span-1 p-4 md:p-6 flex items-center justify-between !bg-white/40">
+                 <div className="flex items-center gap-3 md:gap-4">
                    <div className="w-16 h-16 rounded-full bg-gradient-primary p-0.5">
                      <div className="w-full h-full bg-white rounded-full flex items-center justify-center font-bold text-xl text-brand-royal border-2 border-white">JD</div>
                    </div>

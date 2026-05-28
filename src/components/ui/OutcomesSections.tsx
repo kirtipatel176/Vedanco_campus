@@ -15,7 +15,7 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section className="w-full py-32 bg-background-primary relative">
+    <section className="w-full py-16 md:py-32 bg-background-primary relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl">
@@ -23,7 +23,7 @@ export function ProjectsSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-4"
+              className="text-3xl md:text-5xl font-heading font-bold text-text-primary mb-4"
             >
               Build Real <span className="text-brand-royal">Projects.</span>
             </motion.h2>
@@ -77,7 +77,7 @@ export function PlacementSupportSection() {
   ];
 
   return (
-    <section className="w-full py-32 bg-white border-t border-b border-border-light/50">
+    <section className="w-full py-16 md:py-32 bg-white border-t border-b border-border-light/50">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <motion.div 
@@ -93,7 +93,7 @@ export function PlacementSupportSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6"
+            className="text-3xl md:text-5xl font-heading font-bold text-text-primary mb-6"
           >
             Career & <span className="text-gradient-secondary">Placement</span> Support.
           </motion.h2>
@@ -129,7 +129,7 @@ export function PlacementSupportSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative h-[500px] bg-background-soft rounded-[2.5rem] border border-border-light overflow-hidden flex items-center justify-center"
+          className="relative h-[400px] md:h-[500px] bg-background-soft rounded-[1.5rem] md:rounded-[2.5rem] border border-border-light overflow-hidden flex items-center justify-center mt-8 lg:mt-0"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-brand-sky/10 to-transparent" />
           <div className="p-8 bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-xl max-w-[280px] relative z-10">
@@ -157,7 +157,7 @@ export function PlacementSupportSection() {
 
 export function AmbassadorSection() {
   return (
-    <section id="ambassador" className="w-full py-32 bg-white relative overflow-hidden">
+    <section id="ambassador" className="w-full py-16 md:py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
@@ -174,7 +174,7 @@ export function AmbassadorSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6"
+          className="text-3xl md:text-5xl font-heading font-bold text-text-primary mb-4 md:mb-6"
         >
           Become a Founding <br />Campus Ambassador
         </motion.h2>

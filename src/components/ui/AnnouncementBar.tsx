@@ -24,9 +24,9 @@ export default function AnnouncementBar() {
     <motion.div
       initial={{ height: 0, opacity: 0 }}
       animate={{ height: "auto", opacity: 1 }}
-      className="fixed top-0 left-0 right-0 z-[60] bg-gradient-primary text-white text-sm font-medium overflow-hidden"
+      className="fixed top-0 left-0 right-0 z-[60] bg-gradient-primary text-white text-xs md:text-sm font-medium overflow-hidden"
     >
-      <div className="relative flex items-center justify-center px-4 py-2.5 max-w-7xl mx-auto">
+      <div className="relative flex items-center justify-center px-4 py-2.5 max-w-7xl mx-auto pr-10 md:pr-4">
         {/* Animated Glow */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-[-100%] w-1/2 h-full bg-white/20 blur-md transform -skew-x-12 animate-[shimmer_3s_infinite]" />

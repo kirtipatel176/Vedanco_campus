@@ -13,8 +13,8 @@ const EXPERIENCES = [
 
 export default function LearningExperienceSection() {
   return (
-    <section className="w-full py-32 bg-background-primary relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+    <section className="w-full py-16 md:py-32 bg-background-primary relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Left Text */}
@@ -23,7 +23,7 @@ export default function LearningExperienceSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 leading-tight"
+              className="text-3xl md:text-5xl font-heading font-bold text-text-primary mb-4 md:mb-6 leading-tight"
             >
               A New Way of <span className="text-gradient-secondary">Learning.</span>
             </motion.h2>
@@ -32,7 +32,7 @@ export default function LearningExperienceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-text-secondary leading-relaxed mb-10 max-w-lg"
+              className="text-base md:text-lg text-text-secondary leading-relaxed mb-8 md:mb-10 max-w-lg"
             >
               Education should be an active pursuit, not a passive experience. Our curriculum is designed around execution—you will build, collaborate, and solve complex problems alongside a cohort of driven peers.
             </motion.p>
@@ -129,7 +129,7 @@ load_dotenv()<br/>
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 p-4 bg-white backdrop-blur-xl border border-border-light rounded-2xl shadow-xl flex items-center gap-4 z-20"
+              className="absolute -bottom-4 left-2 md:-bottom-6 md:-left-6 p-3 md:p-4 bg-white backdrop-blur-xl border border-border-light rounded-2xl shadow-xl flex items-center gap-3 md:gap-4 z-20 scale-90 md:scale-100 origin-bottom-left"
             >
               <div className="flex -space-x-3">
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-indigo-100 flex items-center justify-center text-xs font-bold text-indigo-700">RS</div>

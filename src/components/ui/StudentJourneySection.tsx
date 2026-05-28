@@ -13,19 +13,19 @@ const JOURNEY_STEPS = [
 
 export default function StudentJourneySection() {
   return (
-    <section className="w-full py-32 bg-background-soft relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="w-full py-16 md:py-32 bg-background-soft relative">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-heading font-bold text-text-primary"
+            className="text-3xl md:text-5xl font-heading font-bold text-text-primary"
           >
             The Student <span className="text-brand-royal">Journey</span>
           </motion.h2>
-          <p className="mt-4 text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-text-secondary text-base md:text-lg max-w-2xl mx-auto px-4 md:px-0">
             A structured path from ambitious student to industry-ready founder or operator.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function StudentJourneySection() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className={item.span}
             >
-              <BentoCard className="h-full min-h-[200px] flex flex-col justify-end p-8 relative overflow-hidden group">
+              <BentoCard className="h-full min-h-[200px] flex flex-col justify-end p-6 md:p-8 relative overflow-hidden group">
                 {/* Background oversized number */}
                 <span className="absolute -right-4 -top-8 text-[120px] font-heading font-black text-brand-royal/5 group-hover:text-brand-royal/10 transition-colors duration-500 pointer-events-none select-none">
                   {item.step}

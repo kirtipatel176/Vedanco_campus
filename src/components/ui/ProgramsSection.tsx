@@ -1,112 +1,122 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Star } from "lucide-react";
+import Image from "next/image";
 
 const PROGRAMS = [
   {
     id: "01",
-    title: "Applied AI Integration",
-    description: "A comprehensive curriculum covering applied artificial intelligence, machine learning frameworks, and automated workflows.",
-    duration: "1 Month",
-    color: "from-brand-royal to-brand-purple",
+    title: "Applied AI Integration: Complete Coding Agents Course",
+    instructor: "Vedanco AI Faculty, Industry Experts",
+    rating: 4.8,
+    reviews: "6,027 ratings",
+    price: "Coming Soon",
+    bestseller: true,
+    image: "/assets/course-ai.png",
   },
   {
     id: "02",
-    title: "Performance Marketing & Strategy",
-    description: "Advanced strategies in performance marketing, search engine optimization, and brand positioning.",
-    duration: "45 Days",
-    color: "from-amber-400 to-orange-500",
+    title: "Performance Marketing & Brand Strategy Exam Prep Course",
+    instructor: "Vedanco Growth Team",
+    rating: 4.7,
+    reviews: "185,066 ratings",
+    price: "Coming Soon",
+    bestseller: true,
+    image: "/assets/course-marketing.png",
   },
   {
     id: "03",
-    title: "Venture & Entrepreneurship",
-    description: "Rigorous fundamentals in venture creation, business strategy, and scalable entrepreneurship.",
-    duration: "3 Months",
-    color: "from-brand-sky to-brand-cyan",
+    title: "Venture & Entrepreneurship: The Complete Founder Course",
+    instructor: "Vedanco Startup Incubator",
+    rating: 4.7,
+    reviews: "40,564 ratings",
+    price: "Coming Soon",
+    bestseller: true,
+    image: "/assets/course-venture.png",
   },
   {
     id: "04",
-    title: "Software & Systems Engineering",
-    description: "Intensive engineering program focused on scalable systems architecture, API development, and modern software practices.",
-    duration: "6 Months",
-    color: "from-emerald-400 to-teal-500",
+    title: "Software & Systems Engineering Masterclass [2026]",
+    instructor: "Vedanco Engineering Dept.",
+    rating: 4.6,
+    reviews: "2,817 ratings",
+    price: "Coming Soon",
+    bestseller: true,
+    image: "/assets/course-software.png",
   },
 ];
 
 export default function ProgramsSection() {
   return (
-    <section id="programs" className="w-full py-32 bg-background-primary relative">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
-          <div className="max-w-2xl">
-              <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-4xl md:text-5xl font-heading font-bold tracking-tight text-text-primary mb-6 uppercase"
-            >
-              OUR FLAGSHIP <br />
-              <span className="text-gradient-primary">PROGRAMS</span>
-            </motion.h2>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="pb-2"
-          >
-            <p className="text-text-secondary max-w-sm text-sm">
-              Our curriculum is designed by industry experts to give you practical, real-world skills that matter today.
-            </p>
-          </motion.div>
+    <section id="programs" className="w-full py-16 bg-white relative">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+
+        {/* Header (Udemy style is very simple, left aligned) */}
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
+            Trending Courses
+          </h2>
         </div>
 
-        {/* Programs List - Horizontal Split Layout */}
-        <div className="flex flex-col gap-8">
-          {PROGRAMS.map((program, idx) => (
-            <motion.div
+        {/* Udemy Course Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {PROGRAMS.map((program) => (
+            <div
               key={program.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group relative flex flex-col md:flex-row items-start md:items-center justify-between p-8 md:p-12 bg-white rounded-[2rem] border border-border-light hover:border-transparent hover:shadow-[0_20px_50px_rgb(0,0,0,0.03)] transition-all duration-500 overflow-hidden"
+              className="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden hover:cursor-pointer group shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              {/* Hover Gradient Background */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                <div className={cn("absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l opacity-5", program.color)} />
+              {/* Course Image / Banner */}
+              <div className="w-full aspect-video relative overflow-hidden bg-gray-100 border-b border-gray-100">
+                <Image
+                  src={program.image}
+                  alt={program.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  priority={program.id === "01"}
+                />
               </div>
 
-              {/* Left Content */}
-              <div className="flex flex-col md:flex-row gap-6 md:gap-12 md:items-center relative z-10 w-full max-w-5xl">
-                <span className="font-heading text-2xl font-semibold text-text-secondary/40 group-hover:text-brand-royal transition-colors duration-300">
-                  {program.id}
-                </span>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-text-primary mb-4 group-hover:text-brand-royal transition-colors duration-300">
-                    {program.title}
-                  </h3>
-                  <p className="text-text-secondary text-base leading-relaxed md:max-w-xl mb-4">
-                    {program.description}
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background-soft border border-border-light text-sm font-semibold text-text-primary">
-                    <span>⏳ Duration:</span> <span className="text-brand-royal">{program.duration}</span>
+              {/* Course Content */}
+              <div className="p-4 flex flex-col flex-1">
+                {/* Title */}
+                <h3 className="text-base font-bold text-gray-900 leading-snug line-clamp-2 mb-1 group-hover:text-blue-800 transition-colors duration-200">
+                  {program.title}
+                </h3>
+
+                {/* Instructor */}
+                <p className="text-xs text-gray-500 mb-2 truncate">
+                  {program.instructor}
+                </p>
+
+                {/* Ratings & Badges */}
+                <div className="flex items-center flex-wrap gap-2 mb-2 mt-auto">
+                  {program.bestseller && (
+                    <span className="px-2 py-0.5 bg-[#eceb98] text-[#3d3c0a] text-xs font-bold rounded-sm">
+                      Bestseller
+                    </span>
+                  )}
+
+                  <div className="flex items-center gap-1">
+                    <span className="text-sm font-bold text-amber-700">{program.rating}</span>
+                    <Star size={14} className="text-amber-500 fill-amber-500" />
                   </div>
+
+                  <span className="text-xs text-gray-500 border border-gray-200 px-1 py-0.5 rounded-sm">
+                    {program.reviews}
+                  </span>
+                </div>
+
+                {/* Price */}
+                <div className="text-sm font-bold text-blue-700 bg-blue-50/70 border border-blue-100/50 px-2.5 py-1 rounded-md inline-block w-fit mt-1 tracking-wide">
+                  {program.price}
                 </div>
               </div>
-
-              {/* Right Action */}
-              <div className="mt-8 md:mt-0 relative z-10">
-                <button className="w-14 h-14 rounded-full border border-border-light flex items-center justify-center bg-background-primary group-hover:bg-brand-royal group-hover:border-brand-royal group-hover:text-white transition-all duration-300 group-hover:shadow-[0_10px_20px_rgba(79,70,229,0.2)]">
-                  <ArrowUpRight strokeWidth={1.5} className="w-6 h-6 transform group-hover:scale-110 transition-transform" />
-                </button>
-              </div>
-            </motion.div>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

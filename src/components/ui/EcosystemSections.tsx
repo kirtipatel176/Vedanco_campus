@@ -7,13 +7,13 @@ import { BentoCard } from "./BentoCard";
 
 export function CommunitySection() {
   return (
-    <section id="community" className="w-full py-32 bg-background-primary relative overflow-hidden">
+    <section id="community" className="w-full py-16 md:py-32 bg-background-primary relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6"
+          className="text-3xl md:text-5xl font-heading font-bold text-text-primary mb-4 md:mb-6"
         >
           Join a Powerful Student <span className="text-gradient-primary">Community.</span>
         </motion.h2>
@@ -22,7 +22,7 @@ export function CommunitySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg text-text-secondary max-w-2xl mx-auto mb-16"
+          className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto mb-12 md:mb-16 px-4 md:px-0"
         >
           Surround yourself with ambitious peers. Build networks, collaborate on projects, and grow your leadership skills in an environment that rewards innovation.
         </motion.p>
@@ -60,7 +60,7 @@ export function CommunitySection() {
 
 export function StartupEcosystemSection() {
   return (
-    <section className="w-full py-32 bg-gradient-primary relative overflow-hidden text-white">
+    <section className="w-full py-16 md:py-32 bg-gradient-primary relative overflow-hidden text-white">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[100%] bg-white/10 blur-[120px] rounded-full mix-blend-overlay" />
@@ -71,7 +71,8 @@ export function StartupEcosystemSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight"
+            viewport={{ once: true }}
+            className="text-3xl md:text-6xl font-heading font-bold mb-4 md:mb-6 leading-tight"
           >
             Built for Future Founders & Innovators.
           </motion.h2>
@@ -80,7 +81,7 @@ export function StartupEcosystemSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-white/80 leading-relaxed mb-8"
+            className="text-base md:text-lg text-white/80 leading-relaxed mb-6 md:mb-8"
           >
             Vedanco promotes startup thinking, execution, business understanding, and creativity. We don't just train employees; we build creators.
           </motion.p>
@@ -100,7 +101,7 @@ export function StartupEcosystemSection() {
           </motion.div>
         </div>
 
-        <div className="w-full md:w-1/2 relative h-[400px] flex items-center justify-center">
+        <div className="w-full md:w-1/2 relative h-[300px] md:h-[400px] flex items-center justify-center mt-12 md:mt-0">
           <div className="w-full max-w-[400px] aspect-square rounded-full border border-white/20 relative flex items-center justify-center">
              <div className="w-[80%] aspect-square rounded-full border border-white/30 flex items-center justify-center relative">
                <div className="w-[60%] aspect-square rounded-full bg-white/10 backdrop-blur-md border border-white/40 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.2)]">

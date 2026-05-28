@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -17,6 +18,7 @@ const NAV_LINKS = [
 
 export default function FloatingNavbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,16 +68,56 @@ export default function FloatingNavbar() {
         </nav>
 
         {/* CTA */}
-        <div className="relative z-10 flex items-center">
+        <div className="relative z-10 flex items-center gap-4">
           <Link
             href="#apply"
-            className="group relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 bg-gradient-primary rounded-full hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(79,70,229,0.3)] overflow-hidden"
+            className="hidden sm:inline-flex group relative items-center justify-center px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 bg-gradient-primary rounded-full hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(79,70,229,0.3)] overflow-hidden"
           >
             <span className="relative z-10">Apply Now</span>
             <div className="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
           </Link>
+          
+          <button 
+            className="lg:hidden p-2 text-text-primary hover:text-brand-royal transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-4 right-4 mt-2 p-4 bg-white/95 backdrop-blur-md border border-border-light rounded-2xl shadow-xl lg:hidden flex flex-col gap-4 z-40"
+          >
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-base font-medium text-text-secondary hover:text-brand-royal transition-colors p-2 rounded-lg hover:bg-background-soft"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link
+              href="#apply"
+              onClick={() => setIsOpen(false)}
+              className="sm:hidden w-full group relative inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white transition-all duration-300 bg-gradient-primary rounded-xl overflow-hidden mt-2"
+            >
+              <span className="relative z-10">Apply Now</span>
+              <div className="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
